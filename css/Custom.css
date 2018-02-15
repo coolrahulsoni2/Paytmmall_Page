@@ -1,0 +1,72 @@
+/* Custom Css Code For the PayTm Mall CreditMate Page */
+
+
+/* Custom Theme Color Defined Css */
+.theme_text_color{color:#fe5c0f;}
+.theme_bg_color{background-color:#fe5c0f;}
+.theme_border_color{border-color: #fe5c0f;}
+input[type='radio']{ background: #fe5c0f;color:#fe5c0f; }
+hr{color:#fdbd39;background-color: #fe5c0f;}
+
+
+
+/*Body Css */
+body{background: url(../img/circles-light.png)  repeat ;}
+body{font-family: 'Muli', sans-serif;}
+label{font-weight:600;font-size:16px;}
+
+
+/* Font Size Css */
+.fnt20{font-size:20px;}
+.fnt22{font-size:22px;}
+.fnt24{font-size:24px;}
+.fnt26{font-size:26px;}
+.fnt28{font-size:28px;}
+.fnt30{font-size:30px;}
+.fnt32{font-size:32px;}
+.fnt34{font-size:34px;}
+.fnt36{font-size:36px;}
+.fnt38{font-size:38px;}
+
+/* Color Css */
+
+
+/* Input Type Radio Css */
+input[type='radio'] {visibility: hidden}
+
+input[type='radio']:after {
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        top: -5px;
+        left: -20px;
+        position: relative;
+        background-color: #ddd;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        top: -5px;
+        left: -20px;
+        position: relative;
+        background-color: #fe5c0f;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+
+    .cardswidth{width:30rem;}
+
+
+
+@media (max-width: 576px) {
+  .cardswidth{width:100%;}
+}
