@@ -15,12 +15,18 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Ion Icon core CSS -->
+    <link href="css/ionIcon/css/ionicons.min.css" rel="stylesheet">
+
     <!-- Custom Css For Page -->
     <link href="css/Custom.css" rel="stylesheet">
 
 
-    <!-- Custom styles for this template -->
-    <link href="product.css" rel="stylesheet">
+    <!-- Css styles for date Picker  -->
+    <link href="css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Css styles for Form Validation Plugins  -->
+    <link href="css/formValidation.min.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -67,7 +73,7 @@
           <hr>
           <p class="card-text">Some text</p>
           
-            <form>
+            <form class="cMate_leadForm" method="POST"  accept-charset="UTF-8"  action="#">
 <!-- 
             <div class="form-group">
               <label for="exampleInputEmail1">Bike Brand/Make*</label>
@@ -77,7 +83,7 @@
              -->
             <div class="form-group">
               <label for="BikeBrand">Bike Brand/Make*</label>
-              <select class="form-control" id="BikeBrand">
+              <select class="form-control" id="BikeBrand" name="BikeBrand">
                   <option value=""  disabled selected>Select One</option>
                   <option value="Bajaj">Bajaj</option>
                   <option value="Hero">Hero</option>
@@ -89,7 +95,7 @@
 
            <div class="form-group">
             <label for="BikeModel">Bike Model*</label>
-            <select class="form-control" id="BikeModel">
+            <select class="form-control" id="BikeModel" name="BikeModel">
                 <option value=""   disabled selected>Select One</option>
                 <option value="Pulser">Pulser</option>
                 <option value="Discover">Discover</option>
@@ -99,7 +105,7 @@
 
            <div class="form-group">
             <label for="city">Select City*</label>
-            <select class="form-control" id="city">
+            <select class="form-control" id="city" name="city">
                 <option value=""  disabled selected>Select One</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Discover">Ahemdabad</option>
@@ -123,12 +129,12 @@
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your Name">
+                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name">
               </div>
 
               <div class="form-group">
                 <label for="mobile">Mobile Number</label>
-                <input type="tel" class="form-control" id="mobile" aria-describedby="mobileHelp" placeholder="Enter your 10 Digit Mobile Number">
+                <input type="tel" class="form-control" name="mobile" id="mobile" aria-describedby="mobileHelp" placeholder="Enter your 10 Digit Mobile Number">
                 <small id="mobileHelp" class="form-text text-muted">Don’t worry. Your number will be safe with us.</small>
               </div>
 
@@ -143,13 +149,21 @@
             <hr>
 
               <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="text" class="form-control" id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
+               
+                  <label for="dob">Date of Birth</label>
+
+                    <div class="input-group">                     
+                        <input type="text" class="form-control" name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
+                       <div class="input-group-prepend ">
+                        <span class="input-group-text " id="inputGroupPrepend2"><i class="ion-android-calendar theme_text_color"></i></span>
+                      </div>
+                    </div>
+
               </div>
 
               <div class="form-group">
                 <label for="pincode">Pincode</label>
-                <input type="number" class="form-control" id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode" maxlength="6">
+                <input type="number" class="form-control" name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode" maxlength="6">
               </div>
 
               <div class="form-group">
@@ -196,7 +210,7 @@
 
                <div class="form-group">
                 <label for="occupation">Occupation*</label>
-                <select class="form-control" id="occupation">
+                <select class="form-control" id="occupation"  name="occupation" >
                     <option value="" selected disabled>Select One</option>
                     <option value="Mumbai">Mumbai</option>
                     <option value="Discover">Ahemdabad</option>
@@ -207,13 +221,13 @@
 
               <div class="form-group">
                 <label for="income">Monthly Income/Salary</label>
-                <input type="text" class="form-control" id="income" aria-describedby="incomeHelp" placeholder="Enter/Select your Date of Birth">
+                <input type="text" class="form-control"  name="income"  id="income" aria-describedby="incomeHelp" placeholder="Enter Your Income">
               </div>
 
 
                <div class="form-group">
                 <label for="residence">Type of Residence*</label>
-                <select class="form-control" id="residence">
+                <select class="form-control" id="residence"   name="residence" >
                     <option value="" selected disabled>Select One</option>
                     <option value="Owned">Owned</option>
                     <option value="Corporate-Provided">Corporate-Provided</option>
@@ -225,7 +239,7 @@
 
                <div class="form-group">
                 <label for="dependents">Number of Dependents*</label>
-                <select class="form-control" id="dependents">
+                <select class="form-control" id="dependents"   name="dependents" >
                     <option value="" selected disabled>Select One</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -238,17 +252,28 @@
 
               <div class="form-group">
                 <label for="pannumber">PAN Number*</label>
-                <input type="text" class="form-control" id="pannumber" aria-describedby="panHelp" placeholder="Enter your Unique 10 Digit PAN Number">
+                <input type="text" class="form-control" id="pannumber"  name="pannumber"  aria-describedby="panHelp" placeholder="Enter your Unique 10 Digit PAN Number">
                  <small id="panHelp" class="form-text text-muted">We require this to check your CIBIL score & verify your identity.</small>                
               </div>
 
 
 
-            
+               <div class="form-check">
+                  <ul class="ul-checkbox float-left pdngleft0">
+                     <li class="li-checkbox">
+                        <div class="styledCheckbox">
+                          <input class="input-checkbox" type="checkbox"   name="styledCheckbox1" value="None" id="styledCheckbox1" name="check">
+                          <label class="label-checkbox" for="styledCheckbox1"> </label>  
+                        </div>
+                           I agree to CreditMate’s <a href="#">T&Cs</a> & <a href="#">Privacy Policy</a>.
+                      </li>                
+                  </ul>
+                </div>
+            <!--
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="agreeCheck">
-              <label class="form-check-label" for="agreeCheck">I Agree</label>
-            </div>
+              <input type="checkbox" class="form-check-input" id="agreeCheck" width="30" height="30">
+              <label class="form-check-label" for="agreeCheck">I agree to CreditMate’s T&Cs & Privacy Policy.</label>
+            </div> -->
             <button type="submit" class="btn btn-default btn-block theme_bg_color theme_border_color text-white">Apply & Proceed </button>
            </form>
 
@@ -276,12 +301,10 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/holder.min.js"></script>
-    <script>
-      Holder.addTheme('thumb', {
-        bg: '#55595c',
-        fg: '#eceeef',
-        text: 'Thumbnail'
-      });
-    </script>
+     <script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+     <script src="js/formValidation.min.js" type="text/javascript"></script>
+     <script src="js/formvalibootstrap.min.js" type="text/javascript"></script>
+     <script src="js/custom.js" type="text/javascript"></script>
+    
   </body>
 </html>

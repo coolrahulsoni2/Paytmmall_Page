@@ -31,7 +31,27 @@ label{font-weight:600;font-size:16px;}
 /* Color Css */
 
 
-/* Input Type Radio Css */
+
+/* Validation Error Color */
+/* Color of invalid field */
+.has-error .control-label,
+.has-error .help-block,
+.has-error .form-control-feedback {
+    color: #f35b58;
+}
+
+/* Color of valid field */
+.has-success .control-label,
+.has-success .help-block,
+.has-success .form-control-feedback {
+    color: #59b5a8;
+}
+
+
+
+
+
+/* Input Type Radio and checkbox Css */
 input[type='radio'] {visibility: hidden}
 
 input[type='radio']:after {
@@ -62,8 +82,74 @@ input[type='radio']:after {
         border: 2px solid white;
     }
 
+.ul-checkbox
+{
+    list-style-type:none;
+}
+.li-checkbox {
+  line-height: 25px;
+}
+/* Bootstrap mixins */
+/* Checkbox styling */
+.styledCheckbox {
+  width: 20px;
+  margin-right: 20px;
+  position: relative;
+  float: left;
+}
+.label-checkbox {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  border: 1px solid #bbbbbb;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.label-checkbox:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 4px;
+  left: 4px;
+  border: 3px solid #fe5c0f;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.label-checkbox:hover::after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.5;
+}
+.input-checkbox[type=checkbox] {
+  visibility: hidden;
+}
+.input-checkbox[type=checkbox]:checked + .label-checkbox:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+                                           
 
     .cardswidth{width:30rem;}
+    .pdngleft0{padding-left: 0px;}
 
 
 
