@@ -47,16 +47,17 @@
       </div>
     </nav>
 </header>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center ">
+        <img src="img/banner.png" class="img-fluid  d-none d-sm-block" alt="Banner Image">
+      <div class="col-md-5  mx-auto my-1">
+        <!--
          <img src="img/logo2x.png" />
         <h1 class="display-4 font-weight-normal">CreditMate</h1>
         <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
         <a class="btn btn-outline-secondary" href="#">Coming soon</a>
       </div>
       <div class="product-device box-shadow d-none d-md-block"></div>
-      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div> -->
     </div>
 
 
@@ -67,8 +68,8 @@
     
     <div class="col-md-auto">
       <div class="card my-3 cardswidth" >
-        <img class="card-img-top" src="img/bike.jpg" alt="Card image cap">
-        <div class="card-body">
+       <img src="img/banner.png" class="img-fluid d-block d-sm-none" alt="Banner Image">
+        <div class="card-body text-left">
           <h5 class="card-title theme_text_color fnt24">Bike Details</h5>
           <hr>
           <p class="card-text">Some text</p>
@@ -91,6 +92,7 @@
                   <option value="Tvs">TVS</option>
                   <option value="Vespa">Vespa</option>
                </select>
+                <small id="" class="form-text text-error errormsg"></small>
             </div>
 
            <div class="form-group">
@@ -101,6 +103,7 @@
                 <option value="Discover">Discover</option>
                 <option value="Platina">Platina</option>
              </select>
+              <small id="" class="form-text text-error errormsg"></small>
           </div>
 
            <div class="form-group">
@@ -111,16 +114,18 @@
                 <option value="Discover">Ahemdabad</option>
                 <option value="Baroda">Baroda</option>
              </select>
+              <small id="" class="form-text text-error errormsg"></small>
           </div>
 
            <div class="form-group">
             <label for="loanDate">Within how many days are you willing to purchase the bike?</label>
-            <select class="form-control" id="loanDate">
+            <select class="form-control" id="loanDate" name="loanDate">
                 <option value=""  disabled selected>Select One</option>
                 <option value="1 Days">1 Days</option>
                 <option value="1 Week">1 Week</option>
                 <option value="1 Months">1 Months</option>
              </select>
+              <small id="" class="form-text text-error errormsg"></small>
           </div>
 
           <br>
@@ -130,6 +135,7 @@
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name">
+                 <small id="" class="form-text text-error errormsg"></small>
               </div>
 
               <div class="form-group">
@@ -140,7 +146,7 @@
 
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="tel" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your Email ID">
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter your Email ID">
                 <small id="emailHelp" class="form-text text-muted">Don’t worry. We'll Never Spam You.</small>
               </div>
 
@@ -153,7 +159,7 @@
                   <label for="dob">Date of Birth</label>
 
                     <div class="input-group">                     
-                        <input type="text" class="form-control" name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
+                        <input type="text" class="form-control " name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
                        <div class="input-group-prepend ">
                         <span class="input-group-text " id="inputGroupPrepend2"><i class="ion-android-calendar theme_text_color"></i></span>
                       </div>
@@ -163,10 +169,10 @@
 
               <div class="form-group">
                 <label for="pincode">Pincode</label>
-                <input type="number" class="form-control" name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode" maxlength="6">
+                <input type="number" class="form-control " name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode" maxlength="6">
               </div>
 
-              <div class="form-group">
+              <div class="form-group radioLabel">
                 <label for="" class="w-100">Gender</label>
                 <div class="container">
                  <div class="form-check form-check-inline col-5">
@@ -178,9 +184,10 @@
                   <label class="form-check-label" for="female">Female</label>
                 </div>
                 </div>
+                 <small id="" class="form-text text-error errormsg"></small>
               </div>
               <br>
-              <div class="form-group">
+              <div class="form-group radioLabel">
                 <label for="" class="w-100">Marital Status</label>
                 <div class="container">
                  <div class="form-check form-check-inline col-5">
@@ -194,7 +201,7 @@
                 </div>
               </div>
               <br>
-              <div class="form-group">
+              <div class="form-group radioLabel">
                 <label for="" class="w-100">Nature of Job</label>
                 <div class="container">
                  <div class="form-check form-check-inline col-5">
@@ -253,7 +260,7 @@
               <div class="form-group">
                 <label for="pannumber">PAN Number*</label>
                 <input type="text" class="form-control" id="pannumber"  name="pannumber"  aria-describedby="panHelp" placeholder="Enter your Unique 10 Digit PAN Number">
-                 <small id="panHelp" class="form-text text-muted">We require this to check your CIBIL score & verify your identity.</small>                
+                 <small id="panHelp" class="form-text text-muted">We require this to check your CIBIL score & verify your identity.</small>                
               </div>
 
 
@@ -274,7 +281,7 @@
               <input type="checkbox" class="form-check-input" id="agreeCheck" width="30" height="30">
               <label class="form-check-label" for="agreeCheck">I agree to CreditMate’s T&Cs & Privacy Policy.</label>
             </div> -->
-            <button type="submit" class="btn btn-default btn-block theme_bg_color theme_border_color text-white">Apply & Proceed </button>
+            <button type="submit" class="btn btn-default btn-block theme_bg_color theme_border_color text-white" id="formSubmit">Apply & Proceed </button>
            </form>
 
          
@@ -299,11 +306,11 @@
     <script src="js/jquery-3.3.1.slim.min.js"></script>
   
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/holder.min.js"></script>
-     <script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
      <script src="js/formValidation.min.js" type="text/javascript"></script>
      <script src="js/formvalibootstrap.min.js" type="text/javascript"></script>
+     <script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
      <script src="js/custom.js" type="text/javascript"></script>
     
   </body>

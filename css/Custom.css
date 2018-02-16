@@ -33,21 +33,42 @@ label{font-weight:600;font-size:16px;}
 
 
 /* Validation Error Color */
+
+
+
 /* Color of invalid field */
-.has-error .control-label,
-.has-error .help-block,
-.has-error .form-control-feedback {
-    color: #f35b58;
+.has-danger .control-label,
+.has-danger .help-block,
+.has-danger .form-control-feedback,
+.is-invalid .control-label,
+.is-invalid .help-block,
+.is-invalid .form-control-feedback {
+    color: #f35b58 !important;
 }
 
 /* Color of valid field */
 .has-success .control-label,
 .has-success .help-block,
-.has-success .form-control-feedback {
-    color: #59b5a8;
+.has-success .form-control-feedback ,
+.is-valid .control-label,
+.is-valid .help-block,
+.is-valid .form-control-feedback {
+    color: #59b5a8 !important;
+}
+
+.form-control-feedback {
+    position: relative;
+    display: inline-block;
+    font-size:18px;
+    font-weight:600;
 }
 
 
+ .inputGroupContainer .form-control-feedback,
+ .form-control-feedback {
+    top: 2px;
+    right: -5px;
+}
 
 
 
@@ -150,8 +171,10 @@ input[type='radio']:after {
 
     .cardswidth{width:30rem;}
     .pdngleft0{padding-left: 0px;}
-
-
+    .radioLabel label{color:#212529 !important;}
+	.bg-img{background-image: url(../img/banner.png);
+    background-repeat: no-repeat;
+    background-position: top;}
 
 @media (max-width: 576px) {
   .cardswidth{width:100%;}

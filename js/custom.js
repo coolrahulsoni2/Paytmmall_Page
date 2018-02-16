@@ -6,8 +6,38 @@ $(document).ready(function() {
             uiLibrary: 'bootstrap4'
         });
 
-    $('.cMate_leadForm').formValidation({
+    $('.cMate_leadForm')
+     // IMPORTANT: on('init.field.fv') must be declared
+        // before calling .formValidation(...)
+        .on('init.field.fv', function(e, data) {
+            // $(e.target)  --> The field element
+            // data.fv      --> The FormValidation instance
+            // data.field   --> The field name
+            // data.element --> The field element
+            var $parent = data.element.parents('.form-group'),
+                $icon   = data.element.data('fv.icon'),
+                $label  = $parent.find('label');
+
+            // Place the icon right after the label
+            $icon.insertAfter($label);
+        })
+        .formValidation({
         framework: 'bootstrap',
+        control: {
+            valid: "is-valid",
+            invalid: "is-invalid"
+        },
+        row: {
+            invalid: "has-danger"
+        },
+        button: {
+            selector: "#formSubmit",
+            disabled: "disabled"
+        },
+        /*
+       err: {
+            container: 'tooltip'
+        }, */
         icon: {
             valid: 'ion-checkmark-round',
             invalid: 'ion-android-close',
@@ -15,6 +45,7 @@ $(document).ready(function() {
         },
         fields: {
             BikeBrand: {
+            	
                 validators: {
                     notEmpty: {
                         message: 'The Bike Brand is required'
@@ -23,6 +54,7 @@ $(document).ready(function() {
                   }
             },
            BikeModel: {
+           	
                 validators: {
                     notEmpty: {
                         message: 'The Bike Model is required'
@@ -31,6 +63,7 @@ $(document).ready(function() {
                   }
             },
            city: {
+           	
                 validators: {
                     notEmpty: {
                         message: 'The City is required'
@@ -39,6 +72,7 @@ $(document).ready(function() {
                   }
             },
            loanDate: {
+           	
                 validators: {
                     notEmpty: {
                         message: 'The Loan Date is required'
@@ -48,6 +82,7 @@ $(document).ready(function() {
             },
           
             name: {
+            	
                 validators: {
                     notEmpty: {
                         message: 'Your Name is required'
@@ -63,8 +98,18 @@ $(document).ready(function() {
                     }
                 }
             },
-            
+            email: {
+                validators: {
+                	notEmpty: {
+                        message: 'Your Email is required'
+                    },
+                    emailAddress: {
+                        message: "The email address is not valid"
+                    }
+                }
+            },
             mobile: {
+            	
                 validators: {
                     notEmpty: {
                         message: 'Your Mobile Number is required'
@@ -78,6 +123,7 @@ $(document).ready(function() {
             },
             
             dob: {
+            	
                 validators: {
                 	 date: {
                         format: 'MM/DD/YYYY',
@@ -92,6 +138,7 @@ $(document).ready(function() {
             },
             
             pincode: {
+            	
                 validators: {
                 	zipCode: {
                             country: 'IN',
@@ -106,6 +153,7 @@ $(document).ready(function() {
             },
             
             gender: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -116,6 +164,7 @@ $(document).ready(function() {
             },
             
             marital: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -126,6 +175,7 @@ $(document).ready(function() {
             },
             
             jobs: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -136,6 +186,7 @@ $(document).ready(function() {
             },
             
             occupation: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -146,6 +197,7 @@ $(document).ready(function() {
             },
             
             income: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -156,6 +208,7 @@ $(document).ready(function() {
             },
             
             residence: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -166,6 +219,7 @@ $(document).ready(function() {
             },
             
             dependents: {
+            	
                 validators: {
                 	
                     notEmpty: {
@@ -176,6 +230,7 @@ $(document).ready(function() {
             },
             
             pannumber: {
+            	
                 validators: {
                     notEmpty: {
                         message: 'Your Pan Card Number is required'
@@ -192,9 +247,10 @@ $(document).ready(function() {
                 }
             },
             styledCheckbox1: {
+            	
                 validators: {
                     notEmpty: {
-                        message: 'Please Accept Terms & Condition'
+                        message: 'You must agree with the terms and conditions'
                     }
                 }
             }
