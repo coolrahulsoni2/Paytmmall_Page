@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="img/favicon.ico">
 
-    <title>Product example for Bootstrap</title>
+    <title>PayTM Mall Web Page</title>
 
     <!-- Fonts for Page -->
     <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800" rel="stylesheet"> 
