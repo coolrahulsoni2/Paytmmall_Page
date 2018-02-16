@@ -272,7 +272,7 @@
                           <input class="input-checkbox" type="checkbox"   name="styledCheckbox1" value="None" id="styledCheckbox1" name="check">
                           <label class="label-checkbox" for="styledCheckbox1"> </label>  
                         </div>
-                           I agree to CreditMate’s <a href="#">T&Cs</a> & <a href="#">Privacy Policy</a>.
+                           I agree to CreditMate’s <a href="https://www.creditmate.in/termconditions">T&Cs</a> & <a href="https://www.creditmate.in/privacypolicy">Privacy Policy</a>.
                       </li>                
                   </ul>
                 </div>
