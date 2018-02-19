@@ -219,9 +219,9 @@
                 <label for="occupation">Occupation*</label>
                 <select class="form-control" id="occupation"  name="occupation" >
                     <option value="" selected disabled>Select One</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Discover">Ahemdabad</option>
-                    <option value="Baroda">Baroda</option>
+                    <option value="Job in Pvt Sector">Job in Pvt Sector</option>
+                    <option value="Govt. Job">Govt. Job</option>
+                    <option value="Business">Business</option>
                  </select>
               </div>
 
