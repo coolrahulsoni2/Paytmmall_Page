@@ -1,9 +1,20 @@
 /* Custom Js */
 
 $(document).ready(function() {
+	 
+
+
+var now = new Date();
+var month = now.getMonth()+1;
+var day = now.getDate();
+var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2 ? '0' : '') + month + '/' +
+    ((''+day).length<2 ? '0' : '') + day);
+alert(twenty_two_ago);
 
 	 $('#dob').datepicker({
-            uiLibrary: 'bootstrap4'
+            uiLibrary: 'bootstrap4',
+            format:'yyyy-mm-dd',
+            endDate: twenty_two_ago
         });
 
 $("input[name='gender']").click(function(){
@@ -137,7 +148,7 @@ $("input[name='marital']").click(function(){
             	
                 validators: {
                 	 date: {
-                        format: 'MM/DD/YYYY',
+                        format: 'YYYY-MM-DD',
                         message: 'The value is not a valid date'
                     },
 
@@ -214,16 +225,12 @@ $("input[name='marital']").click(function(){
                     notEmpty: {
                         message: 'Income is required'
                     },
-                    greaterThan: {
-                        value: 10000,
+                     stringLength: {
+                        min: 6,
+                        max: 12,
                         message: 'You Are not Eligible for loan'
                     },
-                    integer: {
-                            message: 'Enter a Valid Income in Numerical Format',
-                            // The default separators
-                            thousandsSeparator: '',
-                            decimalSeparator: '.'
-                        },
+                                      
                    
                   }
             },
@@ -278,3 +285,145 @@ $("input[name='marital']").click(function(){
         }
     });
 });
+
+
+
+
+function CommaNumber(Num) { //function to add commas to textboxes
+
+ var charCode = (Num.which) ? Num.which : event.keyCode;
+ alert(charCode);
+ if (charCode > 31 && (charCode < 48 || charCode > 57 ) && charCode != 43)
+	{
+		Num =Num.slice(0,-1);
+        return Num;
+	}
+
+	else if(Num.length >=12 ){
+		Num =Num.slice(0,-1);
+        return Num;
+	}
+
+	else if (charCode == 43 || charCode == 188 ){
+		
+		 Num += '';
+        Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
+        Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
+        x = Num.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        return x1 + x2;
+    
+	}
+        Num += '';
+        Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
+        Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
+        x = Num.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx =/(\d+)(\d{3})/;
+        while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        return x1 + x2;
+    
+
+    }
+
+	 
+	 /* Function for only Pincode  Input **/
+	 function mobileNumber(evt){
+		
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+	 //alert(charCode);
+	
+	
+    if (charCode > 31 && (charCode < 48 || charCode > 57 ) && charCode != 43)
+	{
+		
+     evt =evt.slice(0,-1);
+       // return evt;
+        return evt;
+	}
+
+	else if(evt.length >=11 ){
+		evt =evt.slice(0,-1);
+        return evt;
+	}
+
+	return evt;
+
+}    
+	 
+	 
+	 
+	 /* Function for only Pincode  Input **/
+	 function pincodeNumber(evt){
+		
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+	 //alert(charCode);
+	
+	
+    if (charCode > 31 && (charCode < 48 || charCode > 57 ) && charCode != 43)
+	{
+		
+     evt =evt.slice(0,-1);
+       // return evt;
+        return evt;
+	}
+
+	else if(evt.length >=7 ){
+		evt =evt.slice(0,-1);
+        return evt;
+	}
+
+	else if (charCode == 43 || charCode == 188){
+		
+		return evt;
+	}
+	return evt;
+
+}    
+	 
+	 
+	 /* Function for only Number Input **/
+	 function isNumberKey(evt){
+		
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+	 //alert(charCode);
+	
+	
+    if (charCode > 31 && (charCode < 48 || charCode > 57 ) && charCode != 43)
+	{
+		
+        return false;
+	}
+	else if (charCode == 43 || charCode == 188){
+		
+		return true;
+	}
+	return true;
+
+}    
+	 
+	 
+	 /* Function for only Text Input **/
+	 function isTextKey(evt){
+		 
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+	
+	
+	
+    //if (charCode > 31 && (charCode > 48 || charCode < 57 ) && charCode != 32)
+    if ((charCode > 47 && charCode <= 64) || (charCode > 0 && charCode <= 31) || (charCode > 90 && charCode <= 96) || (charCode > 122 && charCode <= 126) )
+	{
+		
+        evt =evt.slice(0,-1);
+        return evt;
+	}
+	
+    return evt;
+}    
+	 

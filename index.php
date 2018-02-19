@@ -117,13 +117,21 @@
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name">
+                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name"  onkeyup = "javascript:this.value= isTextKey(this.value)" onkeypress="javascript:this.value= isTextKey(this.value)">
                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
               <div class="form-group">
                 <label for="mobile">Mobile Number</label>
-                <input type="tel" class="form-control" name="mobile" id="mobile" aria-describedby="mobileHelp" placeholder="Enter your 10 Digit Mobile Number">
+
+                    <div class="input-group"> 
+                     <div class="input-group-prepend ">
+                        <span class="input-group-text theme_text_color" id="inputGroupPrepend4">+91</span>
+                      </div>                    
+                          <input type="tel" class="form-control" name="mobile" id="mobile" aria-describedby="mobileHelp" placeholder="Enter your 10 Digit Mobile Number" maxlength="10"  onkeyup = "javascript:this.value= mobileNumber(this.value)" onkeypress="javascript:this.value= mobileNumber(this.value)">
+                      
+                    </div>
+              
                 <small id="mobileHelp" class="form-text text-muted">Don’t worry. Your number will be safe with us.</small>
               </div>
 
@@ -141,18 +149,19 @@
                
                   <label for="dob">Date of Birth</label>
 
-                    <div class="input-group">                     
-                        <input type="text" class="form-control " name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
-                       <div class="input-group-prepend ">
+                    <div class="input-group"> 
+                     <div class="input-group-prepend ">
                         <span class="input-group-text " id="inputGroupPrepend2"><i class="ion-android-calendar theme_text_color"></i></span>
-                      </div>
+                      </div>                    
+                        <input type="text" class="form-control " name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
+                      
                     </div>
 
               </div>
 
               <div class="form-group">
                 <label for="pincode">Pincode</label>
-                <input type="number" class="form-control " name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode" maxlength="6">
+                <input type="text" class="form-control " name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode"  onkeyup = "javascript:this.value= pincodeNumber(this.value)" onkeypress="javascript:this.value= pincodeNumber(this.value)">
               </div>
 
               <div class="form-group radioLabel">
@@ -238,7 +247,16 @@
 
               <div class="form-group">
                 <label for="income">Monthly Income/Salary</label>
-                <input type="text" class="form-control"  name="income"  id="income" aria-describedby="incomeHelp" placeholder="Enter Your Income">
+
+                    <div class="input-group"> 
+                      <div class="input-group-prepend " maxlenght="15">
+                        <span class="input-group-text theme_text_color" id="inputGroupPrepend3">₹</span>
+                      </div>                    
+                        <input type="text" class="form-control"  name="income"  id="income" aria-describedby="incomeHelp" placeholder="Enter Your Income"  onkeyup = "javascript:this.value= CommaNumber(this.value)" onkeypress="javascript:this.value= CommaNumber(this.value)">
+                     
+                    </div>
+
+                
               </div>
 
 
