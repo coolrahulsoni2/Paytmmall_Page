@@ -9,7 +9,7 @@ var month = now.getMonth()+1;
 var day = now.getDate();
 var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2 ? '0' : '') + month + '/' +
     ((''+day).length<2 ? '0' : '') + day);
-alert(twenty_two_ago);
+//alert(twenty_two_ago);
 
 	 $('#dob').datepicker({
             uiLibrary: 'bootstrap4',
