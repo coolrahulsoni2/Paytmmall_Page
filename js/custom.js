@@ -292,7 +292,7 @@ $("input[name='marital']").click(function(){
 function CommaNumber(Num) { //function to add commas to textboxes
 
  var charCode = (Num.which) ? Num.which : event.keyCode;
- alert(charCode);
+ //alert(charCode);
  if (charCode > 31 && (charCode < 48 || charCode > 57 ) && charCode != 43)
 	{
 		Num =Num.slice(0,-1);
