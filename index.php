@@ -38,26 +38,15 @@
          <img src="img/logo2x.png" width="160"/>
         </a>
         <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
-       <!--  <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Cart</a> -->
+
       </div>
     </nav>
 </header>
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center ">
         <img src="img/banner.png" class="img-fluid  d-none d-sm-block" alt="Banner Image">
       <div class="col-md-5  mx-auto my-1">
-        <!--
-         <img src="img/logo2x.png" />
-        <h1 class="display-4 font-weight-normal">CreditMate</h1>
-        <p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
-        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-      </div>
-      <div class="product-device box-shadow d-none d-md-block"></div>
-      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div> -->
+        
+
     </div>
 
 
@@ -75,13 +64,7 @@
           <p class="card-text">Some text</p>
           
             <form class="cMate_leadForm" method="POST"  accept-charset="UTF-8"  action="#">
-<!-- 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Bike Brand/Make*</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-             -->
+
             <div class="form-group">
               <label for="BikeBrand">Bike Brand/Make*</label>
               <select class="form-control" id="BikeBrand" name="BikeBrand">
@@ -175,44 +158,71 @@
               <div class="form-group radioLabel">
                 <label for="" class="w-100">Gender</label>
                 <div class="container">
-                 <div class="form-check form-check-inline col-5">
-                  <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                  <label class="form-check-label" for="male" >Male</label>
+                  <div class="row colors" data-toggle="buttons">
+                    <div class="col-6 ">
+                      <label class="btn   btn-rounded  pdnglft20"><i class="ion-man text-white fnt24  text-center"></i>
+                        <input type="radio" name="gender" value="male"  id="male"  autocomplete="off" >                       
+                      </label><br>
+                      <span class="text-center font-weight-600">&nbsp;Male</span>
+                    </div>
+                    <div class="col-6 ">
+                      <label class="btn btn-rounded pdnglft20"><i class="ion-woman text-white fnt24 text-center"></i>
+                        <input type="radio" name="gender" value="female"  id="female"  autocomplete="off">                      
+                      </label><br>
+                      <span class="text-center font-weight-600">Female</span>
+                      </div>
+                     
+                    </div>
                 </div>
-                <div class="form-check form-check-inline col-5">
-                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                  <label class="form-check-label" for="female">Female</label>
-                </div>
-                </div>
+
+
                  <small id="" class="form-text text-error errormsg"></small>
               </div>
               <br>
               <div class="form-group radioLabel">
                 <label for="" class="w-100">Marital Status</label>
-                <div class="container">
-                 <div class="form-check form-check-inline col-5">
-                  <input class="form-check-input" type="radio" name="marital" id="single" value="single">
-                  <label class="form-check-label" for="single">Single</label>
+                 <div class="container">
+                  <div class="row colors" data-toggle="buttons">
+                    <div class="col-6 ">
+                      <label class="btn   btn-rounded  "><img src="img/single.png" width="25" class="mrgntp2">
+                        <input type="radio" name="marital" value="single"  id="single"  autocomplete="off" >                       
+                      </label><br>
+                      <span class="text-center font-weight-600">Single</span>
+                    </div>
+                    <div class="col-6 ">
+                      <label class="btn btn-rounded "><img src="img/married.png" width="25" class="mrgntp2">
+                        <input type="radio" name="marital" value="Married"  id="Married"  autocomplete="off">                      
+                      </label><br>
+                      <span class="text-center font-weight-600">Married</span>
+                      </div>
+                     
+                    </div>
                 </div>
-                <div class="form-check form-check-inline col-5">
-                  <input class="form-check-input" type="radio" name="marital" id="married" value="married">
-                  <label class="form-check-label" for="married">Married</label>
-                </div>
-                </div>
+
+
               </div>
               <br>
               <div class="form-group radioLabel">
                 <label for="" class="w-100">Nature of Job</label>
-                <div class="container">
-                 <div class="form-check form-check-inline col-5">
-                  <input class="form-check-input" type="radio" name="jobs" id="salaried" value="salaried">
-                  <label class="form-check-label" for="salaried">Salaried</label>
+
+                    <div class="container">
+                  <div class="row colors" data-toggle="buttons">
+                    <div class="col-6 ">
+                      <label class="btn   btn-rounded  "><img src="img/salaried.png" width="25" class="mrgntp3">
+                        <input type="radio" name="jobs" value="salaried"  id="salaried"  autocomplete="off" >                       
+                      </label><br>
+                      <span class="text-center font-weight-600">Salaried</span>
+                    </div>
+                    <div class="col-6 ">
+                      <label class="btn btn-rounded center-block block-center"><img src="img/selfEmp.png" width="25" class="mrgntp3">
+                        <input type="radio" name="jobs" value="selfEmployed"  id="selfEmployed"  autocomplete="off">                      
+                      </label><br>
+                      <span class=" font-weight-600">Self-Employed</span>
+                      </div>
+                     
+                    </div>
                 </div>
-                <div class="form-check form-check-inline col-5">
-                  <input class="form-check-input" type="radio" name="jobs" id="selfEmployed" value="selfEmployed">
-                  <label class="form-check-label" for="selfEmployed">Self-Employed</label>
-                </div>
-                </div>
+
               </div>
 
                <div class="form-group">
@@ -239,7 +249,7 @@
                     <option value="Owned">Owned</option>
                     <option value="Corporate-Provided">Corporate-Provided</option>
                     <option value="Mortgaged">Mortgaged</option>
-                    <option value="Relative’s House">Relative’s House</option>
+                    <option value="Relative House">Relative’s House</option>
                     <option value="Rented">Rented</option>
                  </select>
               </div>
@@ -276,11 +286,7 @@
                       </li>                
                   </ul>
                 </div>
-            <!--
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="agreeCheck" width="30" height="30">
-              <label class="form-check-label" for="agreeCheck">I agree to CreditMate’s T&Cs & Privacy Policy.</label>
-            </div> -->
+           
             <button type="submit" class="btn btn-default btn-block theme_bg_color theme_border_color text-white" id="formSubmit">Apply & Proceed </button>
            </form>
 

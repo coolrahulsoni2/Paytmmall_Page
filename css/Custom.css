@@ -7,6 +7,12 @@
 .theme_border_color{border-color: #fe5c0f;}
 input[type='radio']{ background: #fe5c0f;color:#fe5c0f; }
 hr{color:#fdbd39;background-color: #fe5c0f;}
+.btn-rounded:hover{background-color: #fe5c0f}
+.btn-rounded:focus{background-color: #fe5c0f}
+.btn-rounded:active{background-color: #fe5c0f}
+.btn-rounded:visited{background-color: #fe5c0f}
+.btn-rounded.active{background-color: #fe5c0f}
+
 
 
 
@@ -28,8 +34,17 @@ label{font-weight:600;font-size:16px;}
 .fnt36{font-size:36px;}
 .fnt38{font-size:38px;}
 
-/* Color Css */
+.font-weight-600{font-weight: 600;}
 
+
+/* Padding Css */
+.pdnglft20{padding-left: 20px;}
+
+.mrgntp2{margin-top: 2px;}
+.mrgntp3{margin-top: 3px;}
+
+/* Color Css */
+svg path{fill:#ffffff;}
 
 
 /* Validation Error Color */
@@ -74,7 +89,7 @@ label{font-weight:600;font-size:16px;}
 
 /* Input Type Radio and checkbox Css */
 input[type='radio'] {visibility: hidden}
-
+/*
 input[type='radio']:after {
         width: 25px;
         height: 25px;
@@ -89,6 +104,7 @@ input[type='radio']:after {
         border: 2px solid white;
     }
 
+
     input[type='radio']:checked:after {
         width: 25px;
         height: 25px;
@@ -102,6 +118,8 @@ input[type='radio']:after {
         visibility: visible;
         border: 2px solid white;
     }
+
+    */
 
 .ul-checkbox
 {
@@ -175,6 +193,7 @@ input[type='radio']:after {
 	.bg-img{background-image: url(../img/banner.png);
     background-repeat: no-repeat;
     background-position: top;}
+    .btn-rounded{border-radius: 25px;height: 50px;width:50px;background-color:#ddd;}
 
 @media (max-width: 576px) {
   .cardswidth{width:100%;}

@@ -6,6 +6,17 @@ $(document).ready(function() {
             uiLibrary: 'bootstrap4'
         });
 
+$("input[name='gender']").click(function(){
+   $("input[name='gender']").removeClass('active');   
+   $(this).addClass('active');
+});
+
+$("input[name='marital']").click(function(){
+   $("input[name='marital']").removeClass('active');   
+   $(this).addClass('active');
+});
+
+
     $('.cMate_leadForm')
      // IMPORTANT: on('init.field.fv') must be declared
         // before calling .formValidation(...)
