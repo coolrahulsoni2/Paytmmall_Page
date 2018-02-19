@@ -104,7 +104,7 @@ $("input[name='marital']").click(function(){
                         message: 'The Name must be more than 6 and less than 30 characters long'
                     },
                     regexp: {
-                        regexp: /^[a-zA-Z]+$/,
+                        regexp: /^[a-zA-Z ]+$/,
                         message: 'The username can only consist of alphabetical'
                     }
                 }
@@ -214,6 +214,16 @@ $("input[name='marital']").click(function(){
                     notEmpty: {
                         message: 'Income is required'
                     },
+                    greaterThan: {
+                        value: 10000,
+                        message: 'You Are not Eligible for loan'
+                    },
+                    integer: {
+                            message: 'Enter a Valid Income in Numerical Format',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: '.'
+                        },
                    
                   }
             },
