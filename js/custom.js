@@ -27,6 +27,24 @@ $("input[name='marital']").click(function(){
    $(this).addClass('active');
 });
 
+$("input[name='jobs']").click(function(){
+   $("input[name='marital']").removeClass('active');   
+   $(this).addClass('active');
+});
+
+
+
+
+});
+
+
+
+var now = new Date();
+var month = now.getMonth()+1;
+var day = now.getDate();
+var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2 ? '0' : '') + month + '/' +
+    ((''+day).length<2 ? '0' : '') + day);
+
 
     $('.cMate_leadForm')
      // IMPORTANT: on('init.field.fv') must be declared
@@ -44,7 +62,7 @@ $("input[name='marital']").click(function(){
             $icon.insertAfter($label);
         })
         .formValidation({
-        framework: 'bootstrap',
+        framework: 'bootstrap4',
         control: {
             valid: "is-valid",
             invalid: "is-invalid"
@@ -56,6 +74,9 @@ $("input[name='marital']").click(function(){
             selector: "#formSubmit",
             disabled: "disabled"
         },
+        err: {
+                    clazz: "errormsg"
+                },
         /*
        err: {
             container: 'tooltip'
@@ -149,12 +170,15 @@ $("input[name='marital']").click(function(){
                 validators: {
                 	 date: {
                         format: 'YYYY-MM-DD',
-                        message: 'The value is not a valid date'
+                        message: 'The value is not a valid date',
+                         max: twenty_two_ago,
                     },
 
                     notEmpty: {
                         message: 'Date of Birth is required'
                     },
+                   
+                    
                    
                   }
             },
@@ -225,13 +249,7 @@ $("input[name='marital']").click(function(){
                     notEmpty: {
                         message: 'Income is required'
                     },
-                     stringLength: {
-                        min: 6,
-                        max: 12,
-                        message: 'You Are not Eligible for loan'
-                    },
-                                      
-                   
+                                   
                   }
             },
             
@@ -283,8 +301,44 @@ $("input[name='marital']").click(function(){
                 }
             }
         }
-    });
-});
+    }).on('success.form.fv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Some instances you can use are
+            var $form = $(e.target),        // The form instance
+                fv    = $(e.target).data('formValidation'); // FormValidation instance
+            // Do whatever you want here ...
+                alert('Form Submitted Successfully');
+        });
+
+
+
+ function isNumeric(e) {
+           var keyCode = e.which ? e.which : e.keyCode
+           var ret = ((keyCode >= 48 && keyCode <= 57));
+           return ret;
+       }
+
+ 
+
+	 /* Function for only Text Input **/
+	 function isTextKey(evt){
+		 
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+	
+	
+	
+    //if (charCode > 31 && (charCode > 48 || charCode < 57 ) && charCode != 32)
+    if ((charCode > 47 && charCode <= 64) || (charCode > 0 && charCode <= 31) || (charCode > 90 && charCode <= 96) || (charCode > 122 && charCode <= 126) )
+	{
+		
+      return false
+	}
+	
+    return evt;
+}    
+	 
 
 
 
@@ -295,15 +349,14 @@ function CommaNumber(Num) { //function to add commas to textboxes
  //alert(charCode);
  if (charCode > 31 && (charCode < 48 || charCode > 57 ) && charCode != 43)
 	{
-		Num =Num.slice(0,-1);
-        return Num;
+		
+		//Number =Num.slice(0,-1);
+		Number =Num.substring(0,Num.length-1);
+        return false;
+       
 	}
 
-	else if(Num.length >=12 ){
-		Num =Num.slice(0,-1);
-        return Num;
-	}
-
+	
 	else if (charCode == 43 || charCode == 188 ){
 		
 		 Num += '';
@@ -315,8 +368,8 @@ function CommaNumber(Num) { //function to add commas to textboxes
         var rgx = /(\d+)(\d{3})/;
         while (rgx.test(x1))
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        return x1 + x2;
-    
+       // return x1 + x2;
+   		$('#income').val(x1 + x2);
 	}
         Num += '';
         Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
@@ -327,9 +380,10 @@ function CommaNumber(Num) { //function to add commas to textboxes
         var rgx =/(\d+)(\d{3})/;
         while (rgx.test(x1))
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        return x1 + x2;
-    
+       
 
+        //return x1 + x2;
+    	$('#income').val(x1 + x2);
     }
 
 	 
@@ -349,8 +403,8 @@ function CommaNumber(Num) { //function to add commas to textboxes
 	}
 
 	else if(evt.length >=11 ){
-		evt =evt.slice(0,-1);
-        return evt;
+		Num = Num.substring(0,11);
+        return Num;
 	}
 
 	return evt;
@@ -375,8 +429,8 @@ function CommaNumber(Num) { //function to add commas to textboxes
 	}
 
 	else if(evt.length >=7 ){
-		evt =evt.slice(0,-1);
-        return evt;
+		Num = Num.substring(0,7);
+        return Num;
 	}
 
 	else if (charCode == 43 || charCode == 188){
@@ -408,22 +462,4 @@ function CommaNumber(Num) { //function to add commas to textboxes
 
 }    
 	 
-	 
-	 /* Function for only Text Input **/
-	 function isTextKey(evt){
-		 
-    var charCode = (evt.which) ? evt.which : event.keyCode;
 	
-	
-	
-    //if (charCode > 31 && (charCode > 48 || charCode < 57 ) && charCode != 32)
-    if ((charCode > 47 && charCode <= 64) || (charCode > 0 && charCode <= 31) || (charCode > 90 && charCode <= 96) || (charCode > 122 && charCode <= 126) )
-	{
-		
-        evt =evt.slice(0,-1);
-        return evt;
-	}
-	
-    return evt;
-}    
-	 

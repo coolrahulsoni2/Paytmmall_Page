@@ -61,7 +61,7 @@
         <div class="card-body text-left">
           <h5 class="card-title theme_text_color fnt24">Bike Details</h5>
           <hr>
-          <p class="card-text">Some text</p>
+          <p class="card-text"></p>
           
             <form class="cMate_leadForm" method="POST"  accept-charset="UTF-8"  action="#">
 
@@ -117,7 +117,7 @@
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name"  onkeyup = "javascript:this.value= isTextKey(this.value)" onkeypress="javascript:this.value= isTextKey(this.value)">
+                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name"  onkeypress = "return isTextKey(this.value)">
                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
@@ -128,8 +128,8 @@
                      <div class="input-group-prepend ">
                         <span class="input-group-text theme_text_color" id="inputGroupPrepend4">+91</span>
                       </div>                    
-                          <input type="tel" class="form-control" name="mobile" id="mobile" aria-describedby="mobileHelp" placeholder="Enter your 10 Digit Mobile Number" maxlength="10"  onkeyup = "javascript:this.value= mobileNumber(this.value)" onkeypress="javascript:this.value= mobileNumber(this.value)">
-                      
+                          <input type="tel" class="form-control" name="mobile" id="mobile" aria-describedby="mobileHelp" placeholder="Enter your 10 Digit Mobile Number" maxlength="10"  onkeypress = "return isNumeric(event)" >
+                        <small id="" class="form-text text-error errormsg"></small>
                     </div>
               
                 <small id="mobileHelp" class="form-text text-muted">Don’t worry. Your number will be safe with us.</small>
@@ -139,6 +139,7 @@
                 <label for="email">Email</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter your Email ID">
                 <small id="emailHelp" class="form-text text-muted">Don’t worry. We'll Never Spam You.</small>
+                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
           <br>
@@ -156,12 +157,13 @@
                         <input type="text" class="form-control " name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
                       
                     </div>
-
+                       <small id="" class="form-text text-error errormsg"></small>
               </div>
 
               <div class="form-group">
                 <label for="pincode">Pincode</label>
-                <input type="text" class="form-control " name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode"  onkeyup = "javascript:this.value= pincodeNumber(this.value)" onkeypress="javascript:this.value= pincodeNumber(this.value)">
+                <input type="text" class="form-control " name="pincode"  id="pincode" aria-describedby="pincodeHelp" placeholder="Enter your 6 Digit Pincode"  onkeypress = "return isNumeric(event)" maxlength="6" >
+                 <small id="" class="form-text text-error errormsg"></small>
               </div>
 
               <div class="form-group radioLabel">
@@ -182,6 +184,7 @@
                       </div>
                      
                     </div>
+                     <small id="" class="form-text text-error errormsg"></small>
                 </div>
 
 
@@ -206,6 +209,7 @@
                       </div>
                      
                     </div>
+                     <small id="" class="form-text text-error errormsg"></small>
                 </div>
 
 
@@ -230,6 +234,7 @@
                       </div>
                      
                     </div>
+                     <small id="" class="form-text text-error errormsg"></small>
                 </div>
 
               </div>
@@ -242,6 +247,7 @@
                     <option value="Govt. Job">Govt. Job</option>
                     <option value="Business">Business</option>
                  </select>
+                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
 
@@ -249,11 +255,11 @@
                 <label for="income">Monthly Income/Salary</label>
 
                     <div class="input-group"> 
-                      <div class="input-group-prepend " maxlenght="15">
+                      <div class="input-group-prepend " >
                         <span class="input-group-text theme_text_color" id="inputGroupPrepend3">₹</span>
                       </div>                    
-                        <input type="text" class="form-control"  name="income"  id="income" aria-describedby="incomeHelp" placeholder="Enter Your Income"  onkeyup = "javascript:this.value= CommaNumber(this.value)" onkeypress="javascript:this.value= CommaNumber(this.value)">
-                     
+                        <input type="text" class="form-control"  name="income"  id="income" aria-describedby="incomeHelp" placeholder="Enter Your Income" maxlength="12"  onkeypress="return CommaNumber(this.value)" >
+                      <small id="" class="form-text text-error errormsg"></small>
                     </div>
 
                 
@@ -270,6 +276,7 @@
                     <option value="Relative House">Relative’s House</option>
                     <option value="Rented">Rented</option>
                  </select>
+                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
                <div class="form-group">
@@ -282,13 +289,15 @@
                     <option value="3">3</option>
                     <option value="4 And More">4 and More</option>
                  </select>
+                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
 
               <div class="form-group">
                 <label for="pannumber">PAN Number*</label>
-                <input type="text" class="form-control" id="pannumber"  name="pannumber"  aria-describedby="panHelp" placeholder="Enter your Unique 10 Digit PAN Number">
-                 <small id="panHelp" class="form-text text-muted">We require this to check your CIBIL score & verify your identity.</small>                
+                <input type="text" class="form-control" id="pannumber"  name="pannumber"  aria-describedby="panHelp" placeholder="Enter your Unique 10 Digit PAN Number" maxlength="10">
+                 <small id="panHelp" class="form-text text-muted">We require this to check your CIBIL score & verify your identity.</small>  
+                  <small id="" class="form-text text-error errormsg"></small>              
               </div>
 
 
@@ -297,11 +306,13 @@
                   <ul class="ul-checkbox float-left pdngleft0">
                      <li class="li-checkbox">
                         <div class="styledCheckbox">
-                          <input class="input-checkbox" type="checkbox"   name="styledCheckbox1" value="None" id="styledCheckbox1" name="check">
+                          <input class="input-checkbox" type="checkbox"   name="styledCheckbox1" value="None" id="styledCheckbox1" >
                           <label class="label-checkbox" for="styledCheckbox1"> </label>  
                         </div>
                            I agree to CreditMate’s <a href="https://www.creditmate.in/termconditions">T&Cs</a> & <a href="https://www.creditmate.in/privacypolicy">Privacy Policy</a>.
-                      </li>                
+                           <small id="" class="form-text text-error errormsg"></small>
+                      </li>  
+                      <li> </li>              
                   </ul>
                 </div>
            
@@ -336,6 +347,6 @@
      <script src="js/formvalibootstrap.min.js" type="text/javascript"></script>
      <script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
      <script src="js/custom.js" type="text/javascript"></script>
-    
+   
   </body>
 </html>

@@ -78,6 +78,10 @@ svg path{fill:#ffffff;}
     font-weight:600;
 }
 
+.has-success .errormsg{color: #59b5a8 !important;}
+.has-danger .errormsg{color: #f35b58 !important;}
+.has-danger .fv-control-feedback{color:#f35b58 !important;}
+.has-success .fv-control-feedback{color:#59b5a8 !important;}
 
  .inputGroupContainer .form-control-feedback,
  .form-control-feedback {
