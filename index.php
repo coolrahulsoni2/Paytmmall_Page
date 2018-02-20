@@ -117,7 +117,7 @@
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name"  onkeypress = "return isTextKey(this.value)">
+                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name"  onkeypress = "return isTextKey(this.value)" maxlength="30">
                  <small id="" class="form-text text-error errormsg"></small>
               </div>
 
