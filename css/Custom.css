@@ -197,7 +197,7 @@ input[type='radio']:after {
 	.bg-img{background-image: url(../img/banner.png);
     background-repeat: no-repeat;
     background-position: top;}
-    .btn-rounded{border-radius: 25px;height: 50px;width:50px;background-color:#ddd;}
+    .btn-rounded{border-radius: 25px !important;height: 50px;width:50px;background-color:#ddd;}
 
 @media (max-width: 576px) {
   .cardswidth{width:100%;}

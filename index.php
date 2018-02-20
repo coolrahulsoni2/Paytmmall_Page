@@ -22,9 +22,12 @@
     <link href="css/Custom.css" rel="stylesheet">
 
 
-    <!-- Css styles for date Picker  -->
-    <link href="css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet" type="text/css" />
-
+    <!-- Css styles for jquery Ui  -->
+    <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" type="text/css" />
+   <!--  <link href="css/jquery-ui.structure.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
+    -->
+    
     <!-- Css styles for Form Validation Plugins  -->
     <link href="css/formValidation.min.css" rel="stylesheet" type="text/css" />
   </head>
@@ -154,7 +157,7 @@
                      <div class="input-group-prepend ">
                         <span class="input-group-text " id="inputGroupPrepend2"><i class="ion-android-calendar theme_text_color"></i></span>
                       </div>                    
-                        <input type="text" class="form-control bg-white" name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth" readonly="true" >
+                        <input type="text" class="form-control bg-white" name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth" autocomplete="off" readonly="readonly"  >
                       
                     </div>
                        <small id="" class="form-text text-error errormsg"></small>
@@ -338,14 +341,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.js"></script>
   
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/holder.min.js"></script>
      <script src="js/formValidation.min.js" type="text/javascript"></script>
      <script src="js/formvalibootstrap.min.js" type="text/javascript"></script>
-     <script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
      <script src="js/custom.js" type="text/javascript"></script>
    
   </body>

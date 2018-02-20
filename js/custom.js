@@ -3,21 +3,6 @@
 $(document).ready(function() {
 	 
 
-
-var now = new Date();
-var month = now.getMonth()+1;
-var day = now.getDate();
-var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2 ? '0' : '') + month + '/' +
-    ((''+day).length<2 ? '0' : '') + day);
-//alert(twenty_two_ago);
-
-	 $('#dob').datepicker({
-            uiLibrary: 'bootstrap4',
-            format:'yyyy-mm-dd',
-            endDate: twenty_two_ago,
-            enableOnReadonly :true,
-        });
-
 $("input[name='gender']").click(function(){
    $("input[name='gender']").removeClass('active');   
    $(this).addClass('active');
@@ -47,18 +32,39 @@ var month = now.getMonth()+1;
 var day = now.getDate();
 var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2 ? '0' : '') + month + '/' +
     ((''+day).length<2 ? '0' : '') + day);
+//alert(twenty_two_ago);
 
+var d = new Date();
+var year = d.getFullYear() - 22;
+d.setFullYear(year);
+$('#dob').datepicker({ 
+	changeYear: true, 
+	changeMonth: true,
+	 yearRange: '1940:' + year + '', 
+	 defaultDate: d, maxDate:twenty_two_ago});
 
-
-
-$("#dob").on("change paste keyup", function() {
-     $('#dob').datepicker({
+$("#dob").on("change paste keyup keypress click", function() {
+	/* $('#dob').datepicker({
             uiLibrary: 'bootstrap4',
             format:'yyyy-mm-dd',
             endDate: twenty_two_ago,
-            enableOnReadonly : true,
+            enableOnReadonly :true,
         });
+	return true;
+	/*	
+	//$('#dob').datepicker('setDate',twenty_two_ago);
+console.log(twenty_two_ago);
+	//var $this=$(this);
+     //$this.datepicker('hide');
+    
+    setTimeout(function(){
+     	$("#dob").datepicker('endDate',twenty_two_ago);	
+    },100);
+   */
 });
+
+
+
 
     $('.cMate_leadForm')
      // IMPORTANT: on('init.field.fv') must be declared
