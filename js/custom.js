@@ -14,7 +14,8 @@ var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2
 	 $('#dob').datepicker({
             uiLibrary: 'bootstrap4',
             format:'yyyy-mm-dd',
-            endDate: twenty_two_ago
+            endDate: twenty_two_ago,
+            enableOnReadonly :true,
         });
 
 $("input[name='gender']").click(function(){
@@ -39,12 +40,25 @@ $("input[name='jobs']").click(function(){
 
 
 
+
+
 var now = new Date();
 var month = now.getMonth()+1;
 var day = now.getDate();
 var twenty_two_ago = new Date(now.getFullYear()-22  + '/' + ((''+month).length<2 ? '0' : '') + month + '/' +
     ((''+day).length<2 ? '0' : '') + day);
 
+
+
+
+$("#dob").on("change paste keyup", function() {
+     $('#dob').datepicker({
+            uiLibrary: 'bootstrap4',
+            format:'yyyy-mm-dd',
+            endDate: twenty_two_ago,
+            enableOnReadonly : true,
+        });
+});
 
     $('.cMate_leadForm')
      // IMPORTANT: on('init.field.fv') must be declared

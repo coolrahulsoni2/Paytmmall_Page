@@ -154,7 +154,7 @@
                      <div class="input-group-prepend ">
                         <span class="input-group-text " id="inputGroupPrepend2"><i class="ion-android-calendar theme_text_color"></i></span>
                       </div>                    
-                        <input type="text" class="form-control " name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth">
+                        <input type="text" class="form-control bg-white" name="dob"  id="dob" aria-describedby="dobHelp" placeholder="Enter/Select your Date of Birth" readonly="true" >
                       
                     </div>
                        <small id="" class="form-text text-error errormsg"></small>
